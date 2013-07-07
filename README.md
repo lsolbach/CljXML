@@ -1,6 +1,6 @@
-Clj<X>Library
-==============
-The Clj<X>Library is a library .
+CljSvgLibrary
+=============
+The CljSvgLibrary provides a DSL for the programmatic generation of SVG files and some wrapper functions for Apache Batik.
 
 Author/Project Lead
 -------------------
@@ -21,6 +21,7 @@ Code Repository
 History
 -------
 
-Version 0.1.0 (--.--.201-)
+Version 0.1.0 (--.--.2013)
 --------------------------
 * Initial import
+* Initial git import

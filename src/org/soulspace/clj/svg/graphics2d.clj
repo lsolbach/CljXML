@@ -1,4 +1,4 @@
-(ns org.soulspace.clj.xml.svg.graphics2d
+(ns org.soulspace.clj.svg.graphics2d
   (:use [clojure.java.io])
   (:import [java.io StringWriter]
            [java.awt.geom Rectangle2D]

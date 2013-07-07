@@ -3,10 +3,10 @@
  :project "org.soulspace.clj"
  :type "library"
  :version "0.1.0"
- :description "Clojure SVG library based on Apache Batik"
+ :description "The CljSvgLibrary provides a DSL for the programmatic generation of SVG files and some wrapper functions for Apache Batik."
  :plugins ["global" "deps" "clojure" "package"]
- :dependencies [["org.clojure" "clojure" "1.3.0"]
-                ["org.clojure" "data.xml" "0.0.6"]
+ :dependencies [["org.clojure" "clojure" "1.5.1"]
+                ["org.clojure" "data.xml" "0.0.7"]
                 ["org.apache.xmlgraphics" "batik-swing" "1.7"]
                 ["org.apache.xmlgraphics" "batik-dom" "1.7"]
                 ["org.apache.xmlgraphics" "batik-svg-dom" "1.7"]
@@ -28,8 +28,8 @@
                 ["xerces" "xercesImpl" "2.9.0"] ; transitive batik
                 ["xml-apis" "xml-apis" "1.3.04"] ; transitive batik
                 ["xml-apis" "xml-apis-ext" "1.3.04"] ; transitive batik
-                ["org.soulspace.clj" "CljXmlLibrary" "0.1.0"] ; TARGET DEV!
+                ["org.soulspace.clj" "CljXmlLibrary" "0.2.0"] ; TARGET DEV!
                 ["org.soulspace.clj" "CljJavaLibrary" "0.2.0"]
-                ["org.soulspace.clj" "CljLibrary" "0.2.0"] ; transitive CljJavaLibrary
+                ["org.soulspace.clj" "CljLibrary" "0.3.0"] ; transitive CljJavaLibrary
                 ]
  ]

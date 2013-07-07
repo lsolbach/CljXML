@@ -1,4 +1,4 @@
-(ns org.soulspace.clj.xml.svg.swing
+(ns org.soulspace.clj.svg.swing
   (:use [org.soulspace.clj.java beans])
   (:import [org.apache.batik.swing JSVGCanvas JSVGScrollPane]))
 
