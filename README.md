@@ -1,6 +1,6 @@
 CljFoLibrary
 ============
-The CljFoLibrary is a library XSL Formatting Objects.
+The CljFoLibrary providing a DSL for the generation of XSL Formatting Objects (XSL-FO) files.
 
 Author/Project Lead
 -------------------
@@ -8,7 +8,7 @@ Ludger Solbach
 
 Copyright
 ---------
-© 2011-2013 Ludger Solbach
+© 2012-2013 Ludger Solbach
 
 License
 -------
@@ -16,11 +16,11 @@ License
 
 Code Repository
 ---------------
-[https://github.com/lsolbach/CljJavaLibrary] (https://github.com/lsolbach/CljJavaLibrary)
+[https://github.com/lsolbach/CljFoLibrary] (https://github.com/lsolbach/CljFoLibrary)
 
 History
 -------
 
-Version 0.1.0 (--.--.201-)
+Version 0.1.0 (--.--.2013)
 --------------------------
 * Initial import
