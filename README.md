@@ -24,3 +24,5 @@ History
 Version 0.1.0 (--.--.2013)
 --------------------------
 * Initial import
+* Initial publishing on github
+
