@@ -1,20 +1,6 @@
-(ns org.soulspace.clj.xml.xml
+(ns org.soulspace.clj.xml.xml-util
   (:use [clojure.data.xml])
   (:import [org.xml.sax InputSource]))
-
-(defmacro deftag [ns-prefix tag & [attrs]]
-  (let [xml-fn-name (symbol tag)] ; (symbol (str ns-prefix "-" tag))
-    `(defn ~xml-fn-name [& [attrs# & content#]]
-       (element (keyword (str ~ns-prefix ":" ~tag))
-                (merge (or ~attrs {}) (or attrs# {}))
-                (remove #(or (nil? %) (empty? %)) content#)))))
-
-(defmacro defroottags [ns-prefix ns-uri root-tags]
-  `(do ~@(map (fn [tag] `(deftag ~ns-prefix ~tag {(keyword (str "xmlns:" ~ns-prefix)) ~ns-uri})) root-tags)))
-
-(defmacro deftags [ns-prefix tags]
-  `(do ~@(map (fn [tag] `(deftag ~ns-prefix ~tag)) tags)))
-
 
 ; TODO check advantages over emit-str (opts?)
 (defn emit-as-str
