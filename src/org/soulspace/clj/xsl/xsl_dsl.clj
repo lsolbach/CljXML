@@ -1,6 +1,6 @@
 (ns org.soulspace.clj.xsl.xsl-dsl
   (:refer-clojure :exclude [comment import key sort when])
-  (:use [org.soulspace.clj.xml xml]))
+  (:use [org.soulspace.clj.xml dsl-builder]))
 
 ; TODO XSL-1.0, check xsl elements here
 (deftags "xsl"
