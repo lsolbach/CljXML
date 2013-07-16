@@ -1,6 +1,6 @@
 (ns org.soulspace.clj.mathml.mathml-dsl
   (:refer-clojure :exclude [and apply declare fn int list max min not or rem set vector])
-  (:use [org.soulspace.clj.xml xml]))
+  (:use [org.soulspace.clj.xml dsl-builder]))
 
 ; MathMl 3.0
 (deftags "mathml"
