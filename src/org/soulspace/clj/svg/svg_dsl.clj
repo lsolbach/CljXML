@@ -1,6 +1,6 @@
 (ns org.soulspace.clj.svg.svg-dsl
   (:refer-clojure :exclude [filter set symbol use])
-  (:use [org.soulspace.clj.xml xml]))
+  (:use [org.soulspace.clj.xml dsl-builder]))
 
 (deftags "svg" 
   ["a" "altGlyph" "altGlyphDef" "altGlyphItem" "animate" "animateColor" "animateMotion"
