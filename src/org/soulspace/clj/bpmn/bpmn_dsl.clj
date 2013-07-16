@@ -1,5 +1,5 @@
 (ns org.soulspace.clj.bpmn.bpmn-dsl
-  (:use [org.soulspace.clj.xml xml]))
+  (:use [org.soulspace.clj.xml dsl-builder]))
 
 (deftags "bpmn"
   ["adHocSubProcess" "assignment" "boundaryEvent" "businessRuleTask" "cancelEventDefinition"
