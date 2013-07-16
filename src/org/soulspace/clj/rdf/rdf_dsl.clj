@@ -1,5 +1,5 @@
 (ns org.soulspace.clj.rdf.rdf-dsl
-  (:use [org.soulspace.clj.xml xml]))
+  (:use [org.soulspace.clj.xml dsl-builder]))
 
 (deftags "rdf"
   ["about" "aboutEach" "aboutEachPrefix" "bagId" "datatype" "Description" "ID" "li" "nodeID" "parseType" "resource"])
