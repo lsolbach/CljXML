@@ -1,6 +1,6 @@
 (ns org.soulspace.clj.xhtml.xhtml-dsl
   (:refer-clojure :exclude [map meta])
-  (:use [org.soulspace.clj.xml xml]))
+  (:use [org.soulspace.clj.xml dsl-builder]))
 
 (deftags "xhtml"
   ["a" "abbr" "acronym" "address" "area" "b" "base" "bdo" "big" "blockquote" "body" "br" "button" "caption"
