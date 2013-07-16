@@ -1,6 +1,6 @@
 (ns org.soulspace.clj.fo.fo-dsl
   (:refer-clojure :exclude [float])
-  (:use [org.soulspace.clj.xml xml]))
+  (:use [org.soulspace.clj.xml dsl-builder]))
 
 (deftags "fo"
   ["basic-link" "block" "block-container" "character" "color-profile"
