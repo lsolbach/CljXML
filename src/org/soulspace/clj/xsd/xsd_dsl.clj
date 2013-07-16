@@ -1,6 +1,6 @@
-(ns org.soulspace.clj.xml.schema
+(ns org.soulspace.clj.xsd.xsd-dsl
   (:refer-clojure :exclude [import key list sequence])
-  (:use [org.soulspace.clj.xml xml]))
+  (:use [org.soulspace.clj.xml dsl-builder]))
 
 (def schema-types 
   ["anyURI" "base64Binary" "boolean" "byte" "date" "dateTime" "decimal"
