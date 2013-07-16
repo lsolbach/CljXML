@@ -1,6 +1,6 @@
 (ns org.soulspace.clj.docbook.docbook-dsl
   (:refer-clojure :exclude [keyword set symbol type])
-  (:use [org.soulspace.clj.xml xml]))
+  (:use [org.soulspace.clj.xml dsl-builder]))
 
 ; Docbook 5
 (deftags "db"
