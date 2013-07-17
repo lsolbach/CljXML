@@ -21,7 +21,7 @@ Code Repository
 History
 -------
 
-Version 0.2.0 (08.01.2013)
+Version 0.2.0 (17.07.2013)
 --------------------------
 * initial github import
 * moved DSLs into separate projects
