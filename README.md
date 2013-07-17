@@ -21,6 +21,14 @@ Code Repository
 History
 -------
 
-Version 0.1.0 (--.--.201-)
+Version 0.2.0 (08.01.2013)
 --------------------------
-* Initial import
+* initial github import
+* moved DSLs into separate projects
+* refactorings
+
+Version 0.1.0 (08.01.2013)
+--------------------------
+* initial git import
+* implemented XML DSL macros
+* implemented DSLs for XHTML, XSD, Docbook 5, BPMN 2.0, XSL, XSL-FO, SVG, MathML and rdf.
