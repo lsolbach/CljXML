@@ -2,12 +2,6 @@ CljXHtmlLibrary
 ===============
 The CljXHtmlLibrary provides a DSL for the programmatic generation of XHtml files.
 
-Dependencies
-------------
-clojure >= 1.3.0
-clojure.data.xml >= 0.0.6
-CljXmlLibrary >= 0.2.0
-
 Documentation
 -------------
 Example:
@@ -73,6 +67,12 @@ License
 Code Repository
 ---------------
 [https://github.com/lsolbach/CljXHtmlLibrary] (https://github.com/lsolbach/CljXHtmlLibrary)
+
+Dependencies
+------------
+* clojure >= 1.3.0
+* clojure.data.xml >= 0.0.6
+* CljXmlLibrary >= 0.2.0
 
 History
 -------
