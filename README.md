@@ -1,6 +1,6 @@
 CljFoLibrary
 ============
-The CljFoLibrary providing a DSL for the generation of XSL Formatting Objects (XSL-FO) files.
+The CljFoLibrary provides a DSL for the generation of XSL Formatting Objects (XSL-FO) files.
 
 Author/Project Lead
 -------------------
