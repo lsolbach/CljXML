@@ -1,6 +1,6 @@
 CljMathmlLibrary
 ================
-The CljMathmlLibrary provides a DSL for the programmatic generation of MathML xml files.
+The CljMathmlLibrary provides a DSL for the programmatic generation of MathML XML files.
 
 Author/Project Lead
 -------------------
