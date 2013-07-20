@@ -1,4 +1,0 @@
-TODOs
-
-* check if the resulting svg elements could be namespace prefixed
-* add functions to get the svg as strings and streams instead of a file on disk

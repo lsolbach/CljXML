@@ -17,8 +17,10 @@
           (.add c item))))
     c))
 
-(defn svg-canvas[args]
+(defn svg-canvas [args]
+  "Create an SVG canvas."
   (init-svg-swing (JSVGCanvas.) args))
 
-(defn svg-scroll-pane[canvas args]
+(defn svg-scroll-pane [canvas args]
+  "Create an SVG scroll pane."
   (init-svg-swing (JSVGScrollPane. canvas) args))

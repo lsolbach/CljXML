@@ -3,7 +3,7 @@
  :project "org.soulspace.clj"
  :type "library"
  :version "0.1.0"
- :description "The CljSvgLibrary provides a DSL for the programmatic generation of SVG files and some wrapper functions for Apache Batik."
+ :description "The CljSvgLibrary provides a DSL for the programmatic generation of SVG files and wrapper functions for Apache Batik."
  :plugins ["global" "deps" "clojure" "package"]
  :dependencies [["org.clojure" "clojure" "1.5.1"]
                 ["org.clojure" "data.xml" "0.0.7"]
