@@ -1,6 +1,6 @@
 CljSvgLibrary
 =============
-The CljSvgLibrary provides a DSL for the programmatic generation of SVG files and some wrapper functions for Apache Batik.
+The CljSvgLibrary provides a DSL for the programmatic generation of SVG files and wrapper functions for Apache Batik.
 
 Author/Project Lead
 -------------------
