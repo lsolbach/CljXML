@@ -1,6 +1,7 @@
 CljXHtmlLibrary
 ===============
-The CljXHtmlLibrary provides a DSL for the programmatic generation of XHtml files.
+The CljXHtmlLibrary provides DSLs for the programmatic generation of XHTML files.
+Supports HTML4 and HTML5.
 
 Documentation
 -------------
