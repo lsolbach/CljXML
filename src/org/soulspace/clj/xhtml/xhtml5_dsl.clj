@@ -1,5 +1,5 @@
 (ns org.soulspace.clj.xhtml.xhtml5-dsl
-  (:refer-clojure :exclude [map meta])
+  (:refer-clojure :exclude [map meta time])
   (:use [org.soulspace.clj.xml dsl-builder]))
 
 ; HTML5 according to Candidate Recommendation: http://www.w3.org/TR/html5/
@@ -18,4 +18,4 @@
    "wbr"
    ])
 
-(defrootags "xhtml5" "http://www.w3.org/1999/xhtml" ["html"])
+(defroottags "xhtml5" "http://www.w3.org/1999/xhtml" ["html"])
