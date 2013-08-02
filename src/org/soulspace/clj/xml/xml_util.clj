@@ -2,6 +2,10 @@
   (:use [clojure.data.xml])
   (:import [org.xml.sax InputSource]))
 
+(defn string-input-source [s]
+  "Converts a string to a sax input source"
+  (InputSource. (java.io.StringReader. s)))
+
 ; TODO check advantages over emit-str (opts?)
 (defn emit-as-str
   "Emits the Element to String and returns it"
@@ -18,6 +22,3 @@
     (indent e sw opts)
     (.toString sw)))
 
-(defn string-input-source [s]
-  "Converts a string to a sax input source"
-  (InputSource. (java.io.StringReader. s)))
