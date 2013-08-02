@@ -2,9 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="classes"/>
-	<classpathentry kind="lib" path="lib/runtime/clojure.jar"/>
-	<classpathentry kind="lib" path="lib/runtime/data.xml.jar"/>
-	<classpathentry kind="lib" path="lib/runtime/CljXmlLibrary.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/CljXmlLibrary.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/clojure.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/data.xml.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
