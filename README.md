@@ -21,6 +21,11 @@ Code Repository
 History
 -------
 
+Version 0.3.0 (--.08.2013)
+--------------------------
+* added the ability to generate XML without namespace information
+* updated module files
+
 Version 0.2.0 (17.07.2013)
 --------------------------
 * initial github import
