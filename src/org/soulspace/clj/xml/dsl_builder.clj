@@ -8,16 +8,14 @@
 ;   You must not remove this notice, or any other, from this software.
 ;
 (ns org.soulspace.clj.xml.dsl-builder
-  (:require [clojure.string :as str])
-  (:use [clojure.data.xml])
+  (:use [clojure.data.xml]
+        [clojure.string :only [lower-case]]
+        [org.soulspace.clj.string :only [camel-case-to-hyphen]])
   (:import [org.xml.sax InputSource]))
 
 (defn- fn-name [tag]
   "convert to valid function name"
-  ; TODO use first-lower or convert camel case
-  (.toLowerCase tag)
-  ;(str/replace (.toLowerCase tag) \. \-)
-  )
+  (lower-case (camel-case-to-hyphen tag)))
 
 (defmacro deftag 
   "Define a function for the given tag that generates the xml representation."
