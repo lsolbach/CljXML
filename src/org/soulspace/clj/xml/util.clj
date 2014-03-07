@@ -12,8 +12,9 @@
         [clojure.java.io])
   (:import [org.xml.sax InputSource]))
 
-(defn string-input-source [s]
-  "Converts a string to a sax input source"
+(defn string-input-source
+  "Converts a string to a sax input source."
+  [s]
   (InputSource. (java.io.StringReader. s)))
 
 ; TODO check advantages over emit-str (encoding via opts?)
@@ -31,4 +32,3 @@
   (let [^java.io.StringWriter sw (java.io.StringWriter.)]
     (indent e sw opts)
     (.toString sw)))
-

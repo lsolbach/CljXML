@@ -11,5 +11,5 @@
            ["org.soulspace.baumeister/PackagePlugin"]]
  :dependencies [["org.clojure/clojure, 1.5.1"]
                 ["org.clojure/data.xml, 0.0.7"]
-                ["org.soulspace.clj/CljLibrary, 0.5.0"]]
+                ["org.soulspace.clj/CljLibrary, 0.6.0"]]
  ]

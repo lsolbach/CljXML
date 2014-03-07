@@ -14,11 +14,11 @@
   (:import [org.xml.sax InputSource]))
 
 (defn- fn-name [tag]
-  "convert to valid function name"
+  "Converts tag to valid function name"
   (lower-case (camel-case-to-hyphen tag)))
 
 (defmacro deftag 
-  "Define a function for the given tag that generates the xml representation."
+  "Defines a function for the given tag that generates the xml representation."
   ([tag]
     (let [xml-fn-name (symbol (fn-name tag))]
       `(defn ~xml-fn-name [& [attrs# & content#]]
@@ -43,4 +43,3 @@
   "Defines functions for the given tags that generate the xml representations per tag including the namespace declaration"
   [ns-prefix ns-uri root-tags]
   `(do ~@(map (fn [tag] `(deftag ~ns-prefix ~tag {(keyword (str "xmlns:" ~ns-prefix)) ~ns-uri})) root-tags)))
-
