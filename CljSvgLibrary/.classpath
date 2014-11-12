@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="example"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-anim.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-awt-util.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-bridge.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-css.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-dom.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-ext.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-gui-util.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-gvt.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-js.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-parser.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-script.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-svg-dom.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-svggen.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-swing.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-util.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/batik-xml.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/CljJavaLibrary.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/CljLibrary.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/CljXmlLibrary.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/clojure.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/data.xml.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/xalan.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/xml-apis-ext.jar"/>
+	<classpathentry kind="lib" path="build/lib/runtime/xml-apis.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
