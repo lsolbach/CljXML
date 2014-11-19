@@ -10,7 +10,7 @@
 (ns org.soulspace.clj.xml.marshalling)
 
 (defprotocol XMLMarshalling
-  ""
+  "Protocol for XML marshalling."
   (to-xml [this] "")
   (from-xml [this xml] "")) ; ? there's no element in the first place, install empty dummy usable as this in record or use a static factory function?
 
