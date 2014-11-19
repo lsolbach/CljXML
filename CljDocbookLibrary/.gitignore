@@ -1,5 +1,3 @@
-build/
-bin/
-dist/
-lib/
-classes/
+/build/
+/bin/
+/plugin-dependencies.dot
