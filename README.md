@@ -27,6 +27,9 @@ Each of the modules has a separate README file which explains the
 modules purpose.
 
 The modules can be built with Baumeister only at the
-moment. If you like to add Leiningen project files, send me a pull
+moment. Baumeister is available at [http://downloads.soulspace.org/Baumeister/]
+(http://downloads.soulspace.org/Baumeister/).
+
+If you like to add Leiningen project files, feel free and send me a pull
 request.
 
