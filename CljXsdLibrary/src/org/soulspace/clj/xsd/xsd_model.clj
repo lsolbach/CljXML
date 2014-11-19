@@ -1,6 +1,5 @@
 (ns org.soulspace.clj.xsd.xsd-model
   (:refer-clojure :exclude [import key list sequence])
-  (:use [org.soulspace.clj.xsd.xsd-dsl])
   (:import [org.soulspace.clj.xml.marshalling.XMLMarshalling]))
 
 ; Complex types
@@ -43,7 +42,7 @@
   [elements ; [include import redefine annotation] [simple-type complex-type group attribute-group element attribute notation annotation]
    ^:attr target-namespace ^:attr version ^:attr final-default ^:attr block-default
    ^:attr attribute-form-default ^:attr element-form-default ^:attr id ^:attr lang]
-  XMLMarshalling
+  XMLMarshalling 
   (from-xml [this xml]
     )
   (to-xml [this]
