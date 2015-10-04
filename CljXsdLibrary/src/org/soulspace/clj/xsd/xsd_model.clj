@@ -1,6 +1,6 @@
 (ns org.soulspace.clj.xsd.xsd-model
   (:refer-clojure :exclude [import key list sequence])
-  (:import [org.soulspace.clj.xml.marshalling.XMLMarshalling]))
+  (:import [org.soulspace.clj.xml.marshalling XMLMarshalling]))
 
 ; Complex types
 ; annotated: annotation ^:attr id
@@ -49,7 +49,7 @@
     ))
 
 (defrecord Attribute
-  [elements [annotation] [simpleType]
+  [elements ; [annotation] [simpleType]
    ^:attr id ^:attr name ^:attr ref ^:attr type ^:attr use ^:attr default ^:attr fixed ^:attr form]
   XMLMarshalling
   (from-xml [this xml]
