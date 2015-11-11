@@ -5,7 +5,6 @@
  :version "0.4.1"
  :description "The CljXmlLibrary is a library for building XML DSLs in clojure"
  :plugins ["global"
-           ["org.soulspace.baumeister/DependencyPlugin"]
            ["org.soulspace.baumeister/ClojurePlugin"]
            ["org.soulspace.baumeister/ClojureTestPlugin"]
            ["org.soulspace.baumeister/PackagePlugin"]]
