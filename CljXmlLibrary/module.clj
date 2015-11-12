@@ -2,7 +2,7 @@
  :module "CljXmlLibrary"
  :project "org.soulspace.clj"
  :type :library
- :version "0.4.1"
+ :version "0.4.2"
  :description "The CljXmlLibrary is a library for building XML DSLs in clojure"
  :plugins ["global"
            ["org.soulspace.baumeister/ClojurePlugin"]

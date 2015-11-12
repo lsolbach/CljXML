@@ -28,3 +28,8 @@
     (.startsWith str "<") (zip/xml-zip (xml/parse-str str)) ; handle as xml string
     (.startsWith str "http") (xml-zipper (as-url str)) ; handle as url
     :default (xml-zipper (as-file str)))) ; handle as file name
+
+(defn current-zipper-tag
+  "Returns the tag keyword of the current zipper element."
+  [zipper]
+  (:tag (first zipper)))

@@ -12,7 +12,13 @@
 (defprotocol XMLMarshalling
   "Protocol for XML marshalling."
   (to-xml [this] "")
-  (from-xml [this xml] "")) ; ? there's no element in the first place, install empty dummy usable as this in record or use a static factory function?
+  ) 
+
+(defprotocol XMLMarshalling
+  "Protocol for XML unmarshalling."
+  ;? there's no element in the first place, install empty dummy usable as this in record or use a static factory function?
+  (from-xml [this xml] "")
+  )
 
 ; (defrecord Address
 ;   [^:attr street ^{:attr true :alias "houseNo"} house-no ^:attr zip ^:attr city country]
