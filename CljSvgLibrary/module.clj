@@ -11,6 +11,6 @@
  :dependencies [["org.clojure/clojure, 1.7.0"]
                 ["org.apache.xmlgraphics/batik-swing, 1.7"]
                 ["org.apache.xmlgraphics/batik-svggen, 1.7"]
-                ["org.soulspace.clj/CljXmlLibrary, 0.4.1"]
+                ["org.soulspace.clj/CljXmlLibrary, 0.4.2"]
                 ["org.soulspace.clj/CljJavaLibrary, 0.6.1"]]
  ]
