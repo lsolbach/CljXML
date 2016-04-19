@@ -4,8 +4,7 @@
  :type :library
  :version "0.2.1"
  :description "The CljXHtmlLibrary provides a DSL for the programmatic generation of XHtml files."
- :plugins ["global"
-           ["org.soulspace.baumeister/ClojurePlugin"]
+ :plugins [["org.soulspace.baumeister/ClojurePlugin"]
            ["org.soulspace.baumeister/ClojureTestPlugin"]
            ["org.soulspace.baumeister/PackagePlugin"]]
  :dependencies [["org.clojure/clojure, 1.7.0"]

@@ -18,7 +18,7 @@
   (with-open [rdr (reader file)]
     (zip/xml-zip (xml/parse-str (slurp rdr)))))
 
-; TODO implement more robust URL load (with CljLibrary)? 
+; TODO implement more robust URL loading (with CljLibrary)? 
 (defmethod xml-zipper java.net.URL [url]
   (with-open [rdr (reader url)]
     (zip/xml-zip (xml/parse-str (slurp rdr)))))
