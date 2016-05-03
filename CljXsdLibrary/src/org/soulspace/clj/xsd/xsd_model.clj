@@ -1,6 +1,6 @@
 (ns org.soulspace.clj.xsd.xsd-model
   (:refer-clojure :exclude [import key list sequence])
-  (:import [org.soulspace.clj.xml.marshalling XMLMarshalling]))
+  (:import [org.soulspace.clj.xml.marshalling XMLMarshalling XMLUnmarshalling]))
 
 ; Complex types
 ; annotated: annotation ^:attr id
@@ -42,289 +42,325 @@
   [elements ; [include import redefine annotation] [simple-type complex-type group attribute-group element attribute notation annotation]
    ^:attr target-namespace ^:attr version ^:attr final-default ^:attr block-default
    ^:attr attribute-form-default ^:attr element-form-default ^:attr id ^:attr lang]
-  XMLMarshalling 
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Attribute
   [elements ; [annotation] [simpleType]
    ^:attr id ^:attr name ^:attr ref ^:attr type ^:attr use ^:attr default ^:attr fixed ^:attr form]
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord All
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Annotation
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Any
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord AnyAttribute
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Appinfo
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord AttributeGroup
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Choice
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord ComplexContent
   [restriction extension ^:attr mixed]
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord ComplexType
   [^:group complex-type-model name mixed abstract final block]
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Document
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Element
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Enumeration
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Extension
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Field
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Group
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Import
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Include
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Key
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Keyref
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Length
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord List
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord MaxInclusive
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord MinInclusive
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord MaxLength
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord MinLength
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Pattern
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Redefine
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Restriction
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Selector
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Sequence
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord SimpleContent
   [annotations restriction extension ^:attr id]
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord SimpleType
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Union
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
 
 (defrecord Unique
   []
-  XMLMarshalling
+  XMLUnmarshalling
   (from-xml [this xml]
     )
+  XMLMarshalling 
   (to-xml [this]
     ))
