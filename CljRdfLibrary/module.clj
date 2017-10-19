@@ -8,5 +8,5 @@
            ["org.soulspace.baumeister/ClojureTestPlugin"]
            ["org.soulspace.baumeister/PackagePlugin"]]
  :dependencies [["org.clojure/clojure, 1.8.0"]
-                ["org.soulspace.clj/CljXmlLibrary, 0.4.2"]]
+                ["org.soulspace.clj/CljXmlLibrary, 0.4.3"]]
  ]
