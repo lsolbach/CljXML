@@ -1,4 +1,4 @@
-(defproject org.soulspace.clj/CljXmlLibrary "0.1.2"
+(defproject org.soulspace.clj/CljXsdLibrary "0.1.2"
   :description "The CljXsdLibrary provides a DSL for the programmatic generation of XML Schema files"
   :url "https://github.com/lsolbach/CljXML"
   :license {:name "Eclipse Public License"
