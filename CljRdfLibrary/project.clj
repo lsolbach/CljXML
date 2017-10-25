@@ -1,4 +1,4 @@
-(defproject org.soulspace.clj/CljMathmlLibrary "0.1.2"
+(defproject org.soulspace.clj/CljRdfLibrary "0.1.2"
   :description "The CljRdfLibrary provides a DSL for the programmatic generation of RDF xml files"
   :url "https://github.com/lsolbach/CljXML"
   :license {:name "Eclipse Public License"
