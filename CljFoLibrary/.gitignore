@@ -2,6 +2,6 @@
 /bin/
 /plugin-dependencies.dot
 /classes/
-target
+/target/
 pom.xml
 .lein-failures

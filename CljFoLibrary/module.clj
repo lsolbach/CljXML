@@ -2,7 +2,7 @@
  :module "CljFoLibrary"
  :project "org.soulspace.clj"
  :type :library
- :version "0.1.2"
+ :version "0.1.3"
  :description "The CljFoLibrary provides a DSL for the generation of XSL Formatting Objects (XSL-FO) files"
  :plugins [["org.soulspace.baumeister/ClojurePlugin"]
            ["org.soulspace.baumeister/ClojureTestPlugin"]

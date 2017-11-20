@@ -1,4 +1,4 @@
-(defproject org.soulspace.clj/CljFoLibrary "0.1.2"
+(defproject org.soulspace.clj/CljFoLibrary "0.1.3"
   :description "The CljFoLibrary provides a DSL for the generation of XSL Formatting Objects (XSL-FO) files"
   :url "https://github.com/lsolbach/CljXML"
   :license {:name "Eclipse Public License"
