@@ -12,7 +12,7 @@
       (x/p
         {}
         "Dieser Text ist ein Blindtext ohne tiefere Bedeutung.
- Mit diesem Blindtext soll nur etwas Text erzeugt werden,c
+ Mit diesem Blindtext soll nur etwas Text erzeugt werden,
  sodass in einem Layout nicht nur weiße Flächen erscheinen.
  Außerdem können damit zum Beispiel verschiedene Schriftarten
  präsentiert werden oder die Auswirkungen von verschiedenen

@@ -32,23 +32,23 @@
 (defn svg-to-writer
   "Writes an SVG Graphics2D context to a writer."
   ([writer svg-graphics]
-    (svg-to-writer writer svg-graphics true))
+   (svg-to-writer writer svg-graphics true))
   ([writer svg-graphics use-css]
-    (with-open [out writer]
-      (.stream svg-graphics out use-css))))
+   (with-open [out writer]
+     (.stream svg-graphics out use-css))))
 
 (defn svg-to-file
   "Writes an SVG Graphics2D context to file."
   ([svg-file svg-graphics]
-    (svg-to-file svg-file svg-graphics true))
+   (svg-to-file svg-file svg-graphics true))
   ([svg-file svg-graphics use-css]
-    (svg-to-writer (writer (output-stream svg-file :encoding "UTF-8")) svg-graphics use-css)))
+   (svg-to-writer (writer (output-stream svg-file :encoding "UTF-8")) svg-graphics use-css)))
 
 (defn svg-to-string
   "Writes an SVG Graphics2D context to a string."
   ([svg-graphics]
-    (svg-to-string svg-graphics true))
+   (svg-to-string svg-graphics true))
   ([svg-graphics use-css]
-    (let [writer (StringWriter.)]
-      (svg-to-writer writer svg-graphics use-css)
-      (.toString writer))))
+   (let [writer (StringWriter.)]
+     (svg-to-writer writer svg-graphics use-css)
+     (.toString writer))))

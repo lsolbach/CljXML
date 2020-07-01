@@ -29,12 +29,12 @@
      :content
      [^:optional
       {:element "Attributes"
-       :content 
+       :content
        [^:optional
         ^:many
         {:element "Attribute"
-         :attributes ["name" "value"]}]}]}]}
-)
+         :attributes ["name" "value"]}]}]}]})
+
 ; flat vector of  maps
 (def flat-spec
   ^{:ns-prefix "cp"}
@@ -46,23 +46,22 @@
      [^:optional
       ^:many
       Classpathentry]}
-    
+
     {:element Classpathentry
      :attributes ["kind" "path"]
      :content
      [^:optional
       Attributes]}
-    
+
     {:element Attributes
-     :content 
+     :content
      [^:optional
       ^:many
       Attribute]}
-    
+
     {:element Attribute
-     :attributes ["name" "value"]}
-    ]
-  )
+     :attributes ["name" "value"]}])
+
 
 (metatest ^{:ns-prefix "cp"}
   [
@@ -73,20 +72,18 @@
     [^:optional
      ^:many
      Classpathentry]}
-   
+
    {:element Classpathentry
     :attributes ["kind" "path"]
     :content
     [^:optional
      Attributes]}
-   
+
    {:element Attributes
-    :content 
+    :content
     [^:optional
      ^:many
      Attribute]}
-   
-   {:element Attribute
-    :attributes ["name" "value"]}
-   ])
 
+   {:element Attribute
+    :attributes ["name" "value"]}])
