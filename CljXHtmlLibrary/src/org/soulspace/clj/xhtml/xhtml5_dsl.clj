@@ -24,7 +24,7 @@
    "rt" "ruby" "s" "samp" "script" "section" "select" "small" "source" "span"
    "strong" "style" "sub" "summary" "sup" "table" "tbody" "td" "textarea"
    "tfoot" "th" "thead" "time" "title" "tr" "track" "u" "ul" "var" "video"
-   "wbr"
-   ])
+   "wbr"])
+
 
 (defroottags "xhtml5" "http://www.w3.org/1999/xhtml" ["html"])
