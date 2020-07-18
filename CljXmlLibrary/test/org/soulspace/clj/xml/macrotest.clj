@@ -18,7 +18,7 @@
 
 ; hierarchical map
 (def hierarchical-spec
- ^{:ns "http://ecipse.org/classpath"}
+ ^{:ns "http://eclipse.org/classpath"}
   ^{:ns-prefix "cp"}
   {:element "Classpath"
    :content
@@ -35,12 +35,13 @@
         {:element "Attribute"
          :attributes ["name" "value"]}]}]}]})
 
-; flat vector of  maps
+
+; flat vector of  maps
 (def flat-spec
   ^{:ns-prefix "cp"}
   '[
     ^:root
-    ^{:ns "http://ecipse.org/classpath"}
+    ^{:ns "http://eclipse.org/classpath"}
     {:element Classpath
      :content
      [^:optional
@@ -66,7 +67,7 @@
 (metatest ^{:ns-prefix "cp"}
   [
    ^:root
-   ^{:ns "http://ecipse.org/classpath"}
+   ^{:ns "http://eclipse.org/classpath"}
    {:element Classpath
     :content
     [^:optional
