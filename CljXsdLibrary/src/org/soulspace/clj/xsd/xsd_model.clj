@@ -6,7 +6,7 @@
 ; annotated: annotation ^:attr id
 ; top-level-attribute: (restriction attribute elements ;[annotation simple-type] ^:attr ref ^:attr form ^:attr use ^:attr name)
 ;
-
+;
 ; Element groups
 ; redefinable: simple-type complex-type group attribute-group
 ; schema-top: simple-type complex-type group attribute-group element attribute notation
@@ -23,13 +23,13 @@
 ; simple-restriction-model: [simple-type]
 ; restriction-type: annotation [(choice [group all choice sequence] )]
 ;                   ^:attr id ^:attr base
-
-
+;
+;
 ; Attribute groups
 ; occurs: ^:attr minOccurs ^:attr maxOccurs
 ; def-ref: ^:attr name ^:attr ref
 ;
-
+;
 ; Types
 ; form-choice: (restriction NMTOKEN qualified unqualified)
 ; reduced-derivation-control: (restriction derivation-control extension restriction)
@@ -37,6 +37,7 @@
 ; type-derivation-control: (restriction derivation-control extension restriction list union)
 ; all-nni: (union (non-negative-integers) unbounded)
 ; use: (restriction NMTOKEN prohibited optional required)
+;
 
 (defrecord Schema
   [elements ; [include import redefine annotation] [simple-type complex-type group attribute-group element attribute notation annotation]

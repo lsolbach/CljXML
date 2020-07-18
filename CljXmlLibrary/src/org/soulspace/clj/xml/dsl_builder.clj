@@ -10,8 +10,7 @@
 (ns org.soulspace.clj.xml.dsl-builder
   (:use [clojure.data.xml]
         [clojure.string :only [lower-case]]
-        [org.soulspace.clj.string :only [camel-case-to-hyphen]])
-  (:import [org.xml.sax InputSource]))
+        [org.soulspace.clj.string :only [camel-case-to-hyphen]]))
 
 (defn- fn-name [tag]
   "Converts tag to valid function name"

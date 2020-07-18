@@ -12,5 +12,4 @@
                 ["org.apache.xmlgraphics/batik-svggen, 1.9.1"]
                 ["org.apache.xmlgraphics/batik-svg-dom, 1.9.1"]
                 ["org.soulspace.clj/CljXmlLibrary, 0.4.3"]
-                ["org.soulspace.clj/CljJavaLibrary, 0.7.0"]]
- ]
+                ["org.soulspace.clj/CljJavaLibrary, 0.7.0"]]]
