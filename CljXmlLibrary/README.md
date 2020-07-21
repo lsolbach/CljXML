@@ -1,39 +1,20 @@
-CljXmlLibrary
-==============
-The CljXmlLibrary is a library for building XML DSLs in clojure.
+xml.core
+========
+The xml.core library contains code to work with XML in Clojure.
 
-Author/Project Lead
--------------------
-Ludger Solbach
+Usage
+-----
+Leiningen
+[org.soulspace.clj/xml.core "0.5.0"]
 
 Copyright
 ---------
-© 2011-2013 Ludger Solbach
+© 2011-2020 Ludger Solbach
 
 License
 -------
-[Eclipse Public License 1.0] (http://www.eclipse.org/legal/epl-v10.html "EPL 1.0")
+[Eclipse Public License 1.0](http://www.eclipse.org/legal/epl-v10.html)
 
 Code Repository
 ---------------
-[https://github.com/lsolbach/CljXmlLibrary] (https://github.com/lsolbach/CljXmlLibrary)
-
-History
--------
-
-Version 0.3.0 (--.08.2013)
---------------------------
-* added the ability to generate XML without namespace information
-* updated module files
-
-Version 0.2.0 (17.07.2013)
---------------------------
-* initial github import
-* moved DSLs into separate projects
-* refactorings
-
-Version 0.1.0 (08.01.2013)
---------------------------
-* initial git import
-* implemented XML DSL macros
-* implemented DSLs for XHTML, XSD, Docbook 5, BPMN 2.0, XSL, XSL-FO, SVG, MathML and rdf.
+[CljXML on GitHub](https://github.com/lsolbach/CljXML)

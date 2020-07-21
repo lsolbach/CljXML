@@ -1,27 +1,20 @@
-CljXslLibrary
-=============
-The CljXslLibrary provides a DSL for the programmatic generation of XSL files.
+xml.xsl
+=======
+The xml.xsl library provides a DSL for the programmatic generation of XSL files.
 
-Author/Project Lead
--------------------
-Ludger Solbach
+Usage
+-----
+Leinigen:
+[org.soulspace.clj/xml.xsl "0.2.0"]
 
 Copyright
 ---------
-© 2013- Ludger Solbach
+© 2013-2020 Ludger Solbach
 
 License
 -------
-[Eclipse Public License 1.0] (http://www.eclipse.org/legal/epl-v10.html "EPL 1.0")
+[Eclipse Public License 1.0](http://www.eclipse.org/legal/epl-v10.html)
 
 Code Repository
 ---------------
-[https://github.com/lsolbach/CljXslLibrary] (https://github.com/lsolbach/CljXslLibrary)
-
-History
--------
-
-Version 0.1.0 (--.--.2013)
---------------------------
-* Initial import
-* Initial git import
+[CljXML on GitHub](https://github.com/lsolbach/CljXML)

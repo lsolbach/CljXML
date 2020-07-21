@@ -1,12 +1,12 @@
 [
- :module "CljXmlLibrary"
+ :module "xml.core"
  :project "org.soulspace.clj"
  :type :library
- :version "0.4.3"
- :description "The CljXmlLibrary is a library for building XML DSLs in Clojure"
+ :version "0.5.0"
+ :description "The xml.core library contains code to work with XML in Clojure."
  :plugins [["org.soulspace.baumeister/ClojurePlugin"]
            ["org.soulspace.baumeister/ClojureTestPlugin"]
            ["org.soulspace.baumeister/PackagePlugin"]]
- :dependencies [["org.clojure/clojure, 1.8.0"]
+ :dependencies [["org.clojure/clojure, 1.10.1"]
                 ["org.clojure/data.xml, 0.0.7"]
-                ["org.soulspace.clj/CljLibrary, 0.7.0"]]]
+                ["org.soulspace.clj/clj.base, 0.8.0"]]]

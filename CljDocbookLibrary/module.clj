@@ -1,11 +1,11 @@
 [
- :module "CljDocbookLibrary"
+ :module "xml.docbook"
  :project "org.soulspace.clj"
  :type :library
- :version "0.1.2"
- :description "The CljDocbookLibrary provides a DSL for the programmatic generation of Docbook xml files."
+ :version "0.2.0"
+ :description "The xml.docbook library provides a DSL for the programmatic generation of Docbook XML."
  :plugins [["org.soulspace.baumeister/ClojurePlugin"]
            ["org.soulspace.baumeister/ClojureTestPlugin"]
            ["org.soulspace.baumeister/PackagePlugin"]]
- :dependencies [["org.clojure/clojure, 1.8.0"]
-                ["org.soulspace.clj/CljXmlLibrary, 0.4.3"]]]
+ :dependencies [["org.clojure/clojure, 1.10.1"]
+                ["org.soulspace.clj/xml.core, 0.5.0"]]]

@@ -1,9 +1,12 @@
-CljSvgLibrary
-=============
-The CljSvgLibrary provides a DSL for the programmatic generation of SVG files and wrapper functions for Apache Batik.
+xml.svg
+=======
+The xml.svg library provides a DSL for the programmatic generation of SVG files and wrapper functions for Apache Batik.
 
-Documentation
--------------
+Usage
+-----
+Leiningen
+[org.soulspace.clj/xml.svg "0.2.0"]
+
 Example:
 
 ```
@@ -56,26 +59,15 @@ Running the code above yields the following SVG (formatted here for better reada
 </svg:svg>
 ```
 
-Author/Project Lead
--------------------
-Ludger Solbach
-
 Copyright
 ---------
-© 2011-2013 Ludger Solbach
+© 2011-2020 Ludger Solbach
 
 License
 -------
-[Eclipse Public License 1.0] (http://www.eclipse.org/legal/epl-v10.html "EPL 1.0")
+[Eclipse Public License 1.0](http://www.eclipse.org/legal/epl-v10.html)
 
 Code Repository
 ---------------
-[https://github.com/lsolbach/CljJavaLibrary] (https://github.com/lsolbach/CljJavaLibrary)
+[CljXML on GitHub](https://github.com/lsolbach/CljXML)
 
-History
--------
-
-Version 0.1.0 (--.--.2013)
---------------------------
-* Initial import
-* Initial git import

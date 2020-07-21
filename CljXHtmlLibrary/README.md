@@ -1,10 +1,15 @@
-CljXHtmlLibrary
-===============
-The CljXHtmlLibrary provides DSLs for the programmatic generation of XHTML files.
-Supports HTML4 and HTML5.
+xml.xhtml
+=========
+The xml.xhtml library provides DSLs for the programmatic generation of XHTML files.
+xml.xhtml supports XHTML 1 and XHTML 5.
 
-Documentation
--------------
+
+Usage
+-----
+Leiningen
+[org.soulspace.clj/xml.xhtml "0.3.0"]
+
+
 Example:
 
 ```
@@ -53,32 +58,14 @@ Running the code above yields the following XHTML (formatted here for better rea
 </xhtml:html>
 ```
 
-Author/Project Lead
--------------------
-Ludger Solbach
-
 Copyright
 ---------
-© 2013- Ludger Solbach
+© 2013-2020 Ludger Solbach
 
 License
 -------
-[Eclipse Public License 1.0] (http://www.eclipse.org/legal/epl-v10.html "EPL 1.0")
+[Eclipse Public License 1.0](http://www.eclipse.org/legal/epl-v10.html)
 
 Code Repository
 ---------------
-[https://github.com/lsolbach/CljXHtmlLibrary] (https://github.com/lsolbach/CljXHtmlLibrary)
-
-Dependencies
-------------
-* clojure >= 1.3.0
-* clojure.data.xml >= 0.0.6
-* CljXmlLibrary >= 0.2.0
-
-History
--------
-
-Version 0.1.0 (17.07.2013)
---------------------------
-* initial git import
-* initial github import
+[CljXML on GitHub](https://github.com/lsolbach/CljXML)

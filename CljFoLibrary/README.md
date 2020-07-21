@@ -2,27 +2,19 @@ CljFoLibrary
 ============
 The CljFoLibrary provides a DSL for the generation of XSL Formatting Objects (XSL-FO) files.
 
-Author/Project Lead
--------------------
-Ludger Solbach
+Usage
+-----
+Leiningen
+[org.soulspace.clj/xml.fo "0.2.0"]
 
 Copyright
 ---------
-© 2012-2013 Ludger Solbach
+© 2012-2020 Ludger Solbach
 
 License
 -------
-[Eclipse Public License 1.0] (http://www.eclipse.org/legal/epl-v10.html "EPL 1.0")
+[Eclipse Public License 1.0](http://www.eclipse.org/legal/epl-v10.html)
 
 Code Repository
 ---------------
-[https://github.com/lsolbach/CljFoLibrary] (https://github.com/lsolbach/CljFoLibrary)
-
-History
--------
-
-Version 0.1.0 (--.--.2013)
---------------------------
-* Initial import
-* Initial publishing on github
-
+[CljXML](https://github.com/lsolbach/CljXML)
