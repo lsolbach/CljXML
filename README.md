@@ -8,7 +8,7 @@ The xml.core library provides macros for building clojure DSLs for any XML
 dialect. The other libraries provide at least the DSL for the according
 XML dialect.
 
-The CljXML repository now contains the modules (eclipse projects)
+The CljXML repository contains the following modules
 * xml.core
 * xml.xsl
 * xml.xsd
