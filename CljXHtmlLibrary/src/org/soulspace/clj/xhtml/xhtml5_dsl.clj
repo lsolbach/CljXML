@@ -9,10 +9,10 @@
 ;
 (ns org.soulspace.clj.xhtml.xhtml5-dsl
   (:refer-clojure :exclude [map meta time])
-  (:use [org.soulspace.clj.xml dsl-builder]))
+  (:require [org.soulspace.clj.xml.dsl-builder :as dsl]))
 
 ; HTML5 according to Candidate Recommendation: http://www.w3.org/TR/html5/
-(deftags "xhtml5"
+(dsl/deftags "xhtml5"
   ["a" "abbr" "address" "area" "article" "aside" "audio" "b" "base" "bdi"
    "bdo" "blockquote" "body" "br" "button" "canvas" "caption" "cite" "code"
    "col" "colgroup" "command" "data" "datalist" "dd" "del" "details" "dfn"
@@ -27,4 +27,4 @@
    "wbr"])
 
 
-(defroottags "xhtml5" "http://www.w3.org/1999/xhtml" ["html"])
+(dsl/defroottags "xhtml5" "http://www.w3.org/1999/xhtml" ["html"])

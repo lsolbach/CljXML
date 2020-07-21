@@ -9,10 +9,10 @@
 ;
 (ns org.soulspace.clj.mathml.mathml-dsl
   (:refer-clojure :exclude [and apply declare fn int list max min not or rem set vector])
-  (:use [org.soulspace.clj.xml dsl-builder]))
+  (:require [org.soulspace.clj.xml.dsl-builder :as dsl]))
 
 ; MathMl 3.0
-(deftags "mathml"
+(dsl/deftags "mathml"
   ["abs" "and" "annotation" "annotation-xml" "apply" "approx" "arccos" "arccosh"
    "arccot" "arccoth" "arccsc" "arccsch" "arcsec" "arcsech" "arcsin" "arcsinh"
    "arctan" "arctanh" "arg" "bind" "bvar" "card" "cartesianproduct" "cbytes"
@@ -39,4 +39,4 @@
    "subset" "sum" "tan" "tanh" "tendsto" "times" "transpose" "true" "union"
    "uplimit" "variance" "vector" "vectorproduct" "xor"])
 
-(defroottags "mathml" "http://www.w3.org/1998/Math/MathML" ["math"])
+(dsl/defroottags "mathml" "http://www.w3.org/1998/Math/MathML" ["math"])

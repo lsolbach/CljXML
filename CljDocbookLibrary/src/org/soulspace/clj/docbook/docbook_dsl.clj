@@ -9,10 +9,10 @@
 ;
 (ns org.soulspace.clj.docbook.docbook-dsl
   (:refer-clojure :exclude [keyword set symbol type])
-  (:use [org.soulspace.clj.xml dsl-builder]))
+  (:require [org.soulspace.clj.xml.dsl-builder :as dsl]))
 
 ; Docbook 5
-(deftags "db"
+(dsl/deftags "db"
   ["abbrev" "abstract" "accel" "acknowledgements" "acronym" "address"
    "affiliation" "alt" "anchor" "annotation" "answer" "appendix" "application"
    "arc" "area" "areaset" "areaspec" "arg" "article" "artpagenums" "attribution"
@@ -73,4 +73,4 @@
    "warning" "wordasword" "xref" "year"])
 
 ; TODO add other root tags, if any
-(defroottags "db" "http://docbook.org/ns/docbook" ["article" "book" "set"])
+(dsl/defroottags "db" "http://docbook.org/ns/docbook" ["article" "book" "set"])

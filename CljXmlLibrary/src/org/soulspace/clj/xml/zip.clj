@@ -9,18 +9,18 @@
 ;
 (ns org.soulspace.clj.xml.zip
   (:require [clojure.zip :as zip]
-            [clojure.data.xml :as xml])
-  (:use [clojure.java.io]))
+            [clojure.data.xml :as xml]
+            [clojure.java.io :as io]))
 
 (defmulti xml-zipper class)
 
 (defmethod xml-zipper java.io.File [file]
-  (with-open [rdr (reader file)]
+  (with-open [rdr (io/reader file)]
     (zip/xml-zip (xml/parse-str (slurp rdr)))))
 
-; TODO implement more robust URL loading (with CljLibrary)? 
+; TODO implement more robust URL loading (clj-base)? 
 (defmethod xml-zipper java.net.URL [url]
-  (with-open [rdr (reader url)]
+  (with-open [rdr (io/reader url)]
     (zip/xml-zip (xml/parse-str (slurp rdr)))))
 
 (defmethod xml-zipper String [str]

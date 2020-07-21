@@ -8,8 +8,8 @@
 ;   You must not remove this notice, or any other, from this software.
 ;
 (ns org.soulspace.clj.xml.util
-  (:use [clojure.data.xml]
-        [clojure.java.io])
+  (:require [clojure.data.xml :as xml]
+            [clojure.java.io :as io])
   (:import [org.xml.sax InputSource]))
 
 (defn string-input-source
@@ -22,7 +22,7 @@
   "Emits the Element to String and returns it"
   [e & {:as opts}]
   (let [^java.io.StringWriter sw (java.io.StringWriter.)]
-    (emit e sw opts)
+    (xml/emit e sw opts)
     (.toString sw)))
 
 ; TODO check advantages over indent-str (encoding via opts?)
@@ -30,5 +30,5 @@
   "Emits the XML and indents the result.  Writes the results to a String and returns it"
   [e & {:as opts}]
   (let [^java.io.StringWriter sw (java.io.StringWriter.)]
-    (indent e sw opts)
+    (xml/indent e sw opts)
     (.toString sw)))

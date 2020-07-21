@@ -9,9 +9,9 @@
 ;
 (ns org.soulspace.clj.fo.fo-dsl
   (:refer-clojure :exclude [float])
-  (:use [org.soulspace.clj.xml dsl-builder]))
+  (:require [org.soulspace.clj.xml.dsl-builder :as dsl]))
 
-(deftags "fo"
+(dsl/deftags "fo"
   ["basic-link" "block" "block-container" "character" "color-profile"
    "conditional-page-master-reference"
    "declarations" "external-graphic" "float" "flow" "inline"
@@ -25,4 +25,4 @@
    "table" "table-and-caption" "table-body" "table-cell" "table-column"
    "table-footer" "table-header" "table-row" "title" "wrapper"])
 
-(defroottags "fo" "http://www.w3.org/1999/XSL/Format" ["root"])
+(dsl/defroottags "fo" "http://www.w3.org/1999/XSL/Format" ["root"])

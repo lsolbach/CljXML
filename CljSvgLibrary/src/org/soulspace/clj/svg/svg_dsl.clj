@@ -9,9 +9,9 @@
 ;
 (ns org.soulspace.clj.svg.svg-dsl
   (:refer-clojure :exclude [filter set symbol use])
-  (:use [org.soulspace.clj.xml dsl-builder]))
+  (:require [org.soulspace.clj.xml.dsl-builder :as dsl]))
 
-(deftags "svg" 
+(dsl/deftags "svg" 
   ["a" "altGlyph" "altGlyphDef" "altGlyphItem" "animate" "animateColor" "animateMotion"
    "animateTransform" "circle" "clipPath" "color-profile" "cursor" "defs" "desc" "ellipse"
    "feBlend" "feColorMatrix" "feComponentTransfer" "feComposite" "feConvolveMatrix"
@@ -24,4 +24,4 @@
    "polygon" "polyline" "radialGradient" "rect" "script" "set" "stop" "style"
    "switch" "symbol" "text" "textPath" "title" "tref" "tspan" "use" "view" "vkern"])
 
-(defroottags "svg" "http://www.w3.org/2000/svg" ["svg"])
+(dsl/defroottags "svg" "http://www.w3.org/2000/svg" ["svg"])

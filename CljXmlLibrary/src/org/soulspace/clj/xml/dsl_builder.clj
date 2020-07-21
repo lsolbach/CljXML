@@ -8,26 +8,26 @@
 ;   You must not remove this notice, or any other, from this software.
 ;
 (ns org.soulspace.clj.xml.dsl-builder
-  (:use [clojure.data.xml]
-        [clojure.string :only [lower-case]]
-        [org.soulspace.clj.string :only [camel-case-to-hyphen]]))
+  (:require [clojure.data.xml :as xml]
+            [clojure.string :as str]
+            [org.soulspace.clj.string :as sstr]))
 
 (defn- fn-name [tag]
   "Converts tag to valid function name"
-  (lower-case (camel-case-to-hyphen tag)))
+  (str/lower-case (sstr/camel-case-to-hyphen tag)))
 
 (defmacro deftag
   "Defines a function for the given tag that generates the xml representation."
   ([tag]
    (let [xml-fn-name (symbol (fn-name tag))]
      `(defn ~xml-fn-name [& [attrs# & content#]]
-        (element (keyword ~tag)
+        (xml/element (keyword ~tag)
                  (or attrs# {})
                  (remove #(or (nil? %) (empty? %)) content#)))))
   ([ns-prefix tag & [attrs]]
    (let [xml-fn-name (symbol (fn-name tag))]
      `(defn ~xml-fn-name [& [attrs# & content#]]
-        (element (keyword (str ~ns-prefix ":" ~tag))
+        (xml/element (keyword (str ~ns-prefix ":" ~tag))
                  (merge (or ~attrs {}) (or attrs# {}))
                  (remove #(or (nil? %) (empty? %)) content#))))))
 

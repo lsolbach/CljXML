@@ -8,7 +8,7 @@
 ;   You must not remove this notice, or any other, from this software.
 ;
 (ns org.soulspace.clj.svg.graphics2d
-  (:use [clojure.java.io])
+  (:require [clojure.java.io :as io])
   (:import [java.io StringWriter]
            [java.awt.geom Rectangle2D]
            [org.apache.batik.dom GenericDOMImplementation]
@@ -42,7 +42,7 @@
   ([svg-file svg-graphics]
    (svg-to-file svg-file svg-graphics true))
   ([svg-file svg-graphics use-css]
-   (svg-to-writer (writer (output-stream svg-file :encoding "UTF-8")) svg-graphics use-css)))
+   (svg-to-writer (io/writer (io/output-stream svg-file :encoding "UTF-8")) svg-graphics use-css)))
 
 (defn svg-to-string
   "Writes an SVG Graphics2D context to a string."
