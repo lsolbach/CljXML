@@ -13,21 +13,30 @@
             [clojure.string :as str]
             [org.soulspace.clj.string :as sstr]))
 
+
+; TODO generate 'nice' names for tags like RDF, bagID and nodeID 
 (defn- fn-name [tag]
   "Converts tag to valid function name"
   (str/lower-case (sstr/camel-case-to-hyphen tag)))
 
+; TODO use optional named argument for attr map
 (defmacro deftag
   "Defines a function for the given tag that generates the xml representation."
   ([tag]
-   (let [xml-fn-name (symbol (fn-name tag))]
-     `(defn ~xml-fn-name [& [attrs# & content#]]
+   (let [xml-fn-name (symbol (fn-name tag))
+         docstring (str "Generates a " tag " element with the attributes given as map (required) and other given forms as content.")]
+     `(defn ~xml-fn-name 
+        {:doc ~docstring}
+        [& [attrs# & content#]]
         (xml/element (keyword ~tag)
                  (or attrs# {})
                  (remove #(or (nil? %) (empty? %)) content#)))))
   ([ns-prefix tag & [attrs]]
-   (let [xml-fn-name (symbol (fn-name tag))]
-     `(defn ~xml-fn-name [& [attrs# & content#]]
+   (let [xml-fn-name (symbol (fn-name tag))
+         docstring (str "Generates a " tag " element with the attributes given as map (required) and the given content.")]
+     `(defn ~xml-fn-name
+        {:doc ~docstring}
+        [& [attrs# & content#]]
         (xml/element (keyword (str ~ns-prefix ":" ~tag))
                  (merge (or ~attrs {}) (or attrs# {}))
                  (remove #(or (nil? %) (empty? %)) content#))))))

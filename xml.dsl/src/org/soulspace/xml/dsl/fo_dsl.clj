@@ -27,3 +27,7 @@
    "table-footer" "table-header" "table-row" "title" "wrapper"])
 
 (dsl/defroottags "fo" "http://www.w3.org/1999/XSL/Format" ["root"])
+
+; Example
+(comment
+  (clojure.data.xml/emit-str (fo {})))

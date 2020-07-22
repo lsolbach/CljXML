@@ -27,5 +27,8 @@
    "tfoot" "th" "thead" "time" "title" "tr" "track" "u" "ul" "var" "video"
    "wbr"])
 
-
 (dsl/defroottags "xhtml5" "http://www.w3.org/1999/xhtml" ["html"])
+
+; Example
+(comment
+  (clojure.data.xml/emit-str (html {} (body {} (h1 {} "Hello World")))))

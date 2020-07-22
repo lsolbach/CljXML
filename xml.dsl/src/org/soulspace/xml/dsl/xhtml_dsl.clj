@@ -21,3 +21,7 @@
    "title" "tr" "tt" "u" "ul" "var"])
 
 (dsl/defroottags "xhtml" "http://www.w3.org/1999/xhtml" ["html"])
+
+; Example
+(comment
+  (clojure.data.xml/emit-str (html {} (body {} (h1 {} "Hello World")))))

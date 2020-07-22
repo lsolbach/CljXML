@@ -16,8 +16,8 @@
 (dsl/deftags "db"
   ["abbrev" "abstract" "accel" "acknowledgements" "acronym" "address"
    "affiliation" "alt" "anchor" "annotation" "answer" "appendix" "application"
-   "arc" "area" "areaset" "areaspec" "arg" "article" "artpagenums" "attribution"
-   "audiodata" "audioobject" "author" "authorgroup" "authorinitials"
+   "arc" "area" "areaset" "areaspec" "arg" "article" "articleinfo" "artpagenums"
+   "attribution" "audiodata" "audioobject" "author" "authorgroup" "authorinitials"
    "bibliocoverage" "bibliodiv" "biblioentry" "bibliography" "biblioid"
    "bibliolist" "bibliomisc" "bibliomixed" "bibliomset" "biblioref"
    "bibliorelation" "biblioset" "bibliosource" "blockquote" "book" "bridgehead"
@@ -75,3 +75,7 @@
 
 ; TODO add other root tags, if any
 (dsl/defroottags "db" "http://docbook.org/ns/docbook" ["article" "book" "set"])
+
+; Example
+(comment
+  (clojure.data.xml/emit-str (article {} (articleinfo {} (authorinitials {} "lso")))))
