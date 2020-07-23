@@ -11,7 +11,6 @@ XSL-FO, MathML, SVG, XTHML or XML Schema.
 The CljXML repository contains the following modules:
 * xml.core
 * xml.dsl
-* xml.svg
 * xml.xsd
 
 Copyright
