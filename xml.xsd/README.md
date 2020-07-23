@@ -1,6 +1,6 @@
 xml.xsd
 =======
-The xml.xsd library provides a DSL for the programmatic generation of XML Schema files.
+The xml.xsd library contains functions to work with XML Schema.
 
 Usage
 -----
