@@ -6,6 +6,7 @@
 ## Leiningen
 **/target
 **/.lein-failures
+**/.lein-repl-history
 # only for Leiningen projects, remove for Maven projects
 **/pom.xml
 

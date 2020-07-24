@@ -13,13 +13,13 @@ The CljXML repository contains the following modules:
 * xml.dsl
 * xml.xsd
 
+Licence
+-------
+See the license section in the individual modules.
+
 Copyright
 ---------
-© 2013-2020 Ludger Solbach
-
-License
--------
-[Eclipse Public License 1.0](http://www.eclipse.org/legal/epl-v10.html)
+© 2011-2020 Ludger Solbach
 
 Code Repository
 ---------------
