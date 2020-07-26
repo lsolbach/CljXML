@@ -1,0 +1,7 @@
+/build/
+/bin/
+/plugin-dependencies.dot
+/classes/
+target
+pom.xml
+.lein-failures
