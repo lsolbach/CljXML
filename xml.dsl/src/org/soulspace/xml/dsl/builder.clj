@@ -17,7 +17,7 @@
 ; TODO generate 'nice' names for tags like RDF, bagID and nodeID 
 (defn- fn-name [tag]
   "Converts tag to valid function name"
-  (str/lower-case (sstr/camel-case-to-hyphen tag)))
+  (str/lower-case (sstr/to-kebab-case tag)))
 
 ; TODO use optional named argument for attr map
 (defmacro deftag

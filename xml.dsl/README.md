@@ -14,8 +14,11 @@ Included XML DSLs:
 
 Usage
 -----
-Leiningen
-[org.soulspace.clj/xml.dsl "0.5.0"]
+Leiningen dependency
+
+```
+[org.soulspace.clj/xml.dsl "0.5.1]
+```
 
 Copyright
 ---------
