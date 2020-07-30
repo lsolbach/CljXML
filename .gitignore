@@ -3,6 +3,7 @@
 ## Clojure
 .nrepl-port
 .cpcache/
+.rebl/
 
 ## Leiningen
 target/
