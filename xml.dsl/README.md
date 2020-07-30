@@ -1,7 +1,10 @@
 xml.dsl
 =======
 The xml.dsl library contains a DSL builder for XML and DSLs for common some XML Dialects.
-Included XML DSLs:
+
+The DSLs make it easy to programmatically create XML using all the functions and control structures of Clojure.
+
+Included are DSLs for the following dialects:
 * BPMN
 * Docbook
 * XSL-FO
