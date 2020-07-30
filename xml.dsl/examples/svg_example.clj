@@ -1,28 +1,15 @@
-xml.dsl
-=======
-The xml.dsl library contains a DSL builder for XML and DSLs for common some XML Dialects.
-Included XML DSLs:
-* BPMN
-* Docbook
-* XSL-FO
-* MathML
-* RDF
-* SVG
-* XHTML
-* XSD
-* XSL
+;;
+;;   Copyright (c) Ludger Solbach. All rights reserved.
+;;   The use and distribution terms for this software are covered by the
+;;   Eclipse Public License 1.0 (http://opensource.org/licenses/eclipse-1.0.php)
+;;   which can be found in the file license.txt at the root of this distribution.
+;;   By using this software in any fashion, you are agreeing to be bound by
+;;   the terms of this license.
+;;   You must not remove this notice, or any other, from this software.
+;;
 
-Usage
------
-Leiningen dependency
+;; Example for using the SVG DSL 
 
-```
-[org.soulspace.clj/xml.dsl "0.5.1]
-```
-
-Here is an example for the usage of the SVG DSL:
-
-```
 (ns svg-example
   (:require [org.soulspace.xml.dsl.svg-dsl :as svg]
             [clojure.data.xml :as xml]))
@@ -61,31 +48,3 @@ Here is an example for the usage of the SVG DSL:
 
 ; (svg-str svg-circles)
 ; (svg-str svg-image)
-
-```
-
-Emmiting the svg-circles function will create the following SVG document:
-
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<svg:svg xmlns:svg="http://www.w3.org/2000/svg" width="400" height="400">
-  <svg:circle r="100" cx="200" cy="200" style="stroke:black; stroke-width:5; fill:none"></svg:circle>
-  <svg:circle r="50" cx="100" cy="100" style="stroke:black; fill:green"></svg:circle>
-</svg:svg>
-```
-
-The provided DSLs for the other XML dialects can be used in a similar fashion.
-
-Feel free to contribute further DSLs via pull requests.
-
-Copyright
----------
-© 2011-2020 Ludger Solbach
-
-License
--------
-[Eclipse Public License 1.0](http://www.eclipse.org/legal/epl-v10.html)
-
-Code Repository
----------------
-[CljXML on GitHub](https://github.com/lsolbach/CljXML)
