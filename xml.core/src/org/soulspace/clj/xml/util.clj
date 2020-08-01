@@ -12,6 +12,14 @@
             [clojure.java.io :as io])
   (:import [org.xml.sax InputSource]))
 
+(def invalid-chars
+  #"[^\t\r\n\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF]")
+
+(defn invalid-xml-chars?
+  "Checks if the xml string 's' contains invalid XML characters."
+  [s]
+  (re-matches invalid-chars s))
+
 (defn string-input-source
   "Converts a string to a sax input source."
   [s]
