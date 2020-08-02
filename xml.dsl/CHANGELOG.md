@@ -3,6 +3,10 @@ Change Log
 
 Version 0.5.2
 -------------
+
+
+Version 0.5.2
+-------------
 * updated clj.base to 0.8.2 to fix function names for tags
 * removed duplicate lower-case call
 
