@@ -16,7 +16,7 @@
 
 (defn- fn-name [tag]
   "Converts the 'tag' to a valid function name"
-  (str/lower-case (sstr/to-kebab-case tag)))
+  (sstr/to-kebab-case tag))
 
 ; TODO use optional named argument for attr map
 (defmacro deftag

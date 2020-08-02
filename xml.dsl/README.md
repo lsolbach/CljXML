@@ -15,12 +15,14 @@ Included are DSLs for the following dialects:
 * XSD
 * XSL
 
+[![Clojars Project](https://img.shields.io/clojars/v/org.soulspace.clj/xml.dsl.svg)](https://clojars.org/org.soulspace.clj/xml.dsl)
+
 Usage
 -----
 Leiningen dependency
 
 ```
-[org.soulspace.clj/xml.dsl "0.5.1]
+[org.soulspace.clj/xml.dsl "0.5.2]
 ```
 
 Here is an example for the usage of the SVG DSL:
