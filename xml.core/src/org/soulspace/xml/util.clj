@@ -7,7 +7,7 @@
 ;   the terms of this license.
 ;   You must not remove this notice, or any other, from this software.
 ;
-(ns org.soulspace.clj.xml.util
+(ns org.soulspace.xml.util
   (:require [clojure.data.xml :as xml]
             [clojure.java.io :as io])
   (:import [org.xml.sax InputSource]))

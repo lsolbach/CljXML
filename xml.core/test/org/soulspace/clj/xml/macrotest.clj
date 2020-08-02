@@ -1,5 +1,5 @@
-(ns org.soulspace.clj.xml.macrotest
-  (:use [org.soulspace.clj.xml marshalling zip])
+(ns org.soulspace.xml.macrotest
+  (:use [org.soulspace.xml marshalling zip])
   (:require [clojure.zip :as zip]
             [clojure.data.xml :as xml]))
 

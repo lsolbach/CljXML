@@ -1,4 +1,4 @@
-(ns org.soulspace.clj.xml.xmltest
+(ns org.soulspace.xml.xmltest
   (:use [clojure.data xml]
         [clojure.string :only [join]]))
 
