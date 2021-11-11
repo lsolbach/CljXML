@@ -12,6 +12,10 @@ target/
 # only for Leiningen projects, remove for Maven projects
 **/pom.xml
 
+## VS Code Calva
+.clj-kondo
+.lsp
+
 ## Eclipse
 .classpath
 .project
