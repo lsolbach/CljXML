@@ -12,8 +12,8 @@
             [clojure.data.xml :as xml]
             [clojure.data.zip :as zf]
             [clojure.data.zip.xml :as zx]
-            [org.soulspace.xml.maven.pom-dsl :as pom])
-  (:require [org.soulspace.clj.xml.marshalling :as m]
+            [org.soulspace.xml.maven.pom-dsl :as pom]
+            [org.soulspace.clj.xml.marshalling :as m]
             [org.soulspace.clj.property-replacement :as pr])
   (:import [org.soulspace.clj.xml.marshalling.XMLMarshalling]))
 
