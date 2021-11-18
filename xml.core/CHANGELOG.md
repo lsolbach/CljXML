@@ -5,6 +5,7 @@ Version 0.5.0
 -------------
 * changed project name
 * added Leiningen project file
+* added deps.edn file
 * updated dependencies
 * code updates
 
