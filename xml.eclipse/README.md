@@ -2,6 +2,9 @@ xml.eclipse
 ===========
 The xml.eclipse library contains code to handle Eclipse XML files.
 
+Usage
+-----
+
 Copyright
 ---------
 © 2012-2020 Ludger Solbach
