@@ -15,7 +15,7 @@
             [org.soulspace.xml.maven.pom-dsl :as pom]
             [org.soulspace.clj.xml.marshalling :as m]
             [org.soulspace.clj.property-replacement :as pr])
-  (:import [org.soulspace.clj.xml.marshalling.XMLMarshalling]))
+  (:import [org.soulspace.clj.xml.marshalling XMLMarshalling]))
 
 ;;
 ;; XML model for the Maven POM version 4
@@ -32,21 +32,24 @@
     (:artifact-id dependency)
     (str (:artifact-id dependency) "-" (:classifier dependency))))
 
-(defn pom-exclusion-data [exclusion]
+(defn pom-exclusion-data
   "Creates exclusion data from a pom exclusion."
+  [exclusion]
   [(:group-id exclusion) (:artifact-id exclusion)])
 
 
 ; TODO return all fields
-(defn pom-dependency-data [dependency]
+(defn pom-dependency-data
   "Creates dependency data from a pom dependency."
+  [dependency]
   [[(:group-id dependency) (:artifact-id dependency) (:version dependency)
     (pom-name dependency) (:type dependency)]
    (:scope dependency) (:optional dependency)
    (map pom-exclusion-data (:exclusions dependency))])
 
-(defn parse-pom-properties [zipped]
+(defn parse-pom-properties
   "Creates property map for pom properties"
+  [zipped]
   ; zip to properties if any and return a map of child element names and their contents
   (if-let [properties (zx/xml1-> zipped :properties)]
     (if-let [props (zip/children properties)]
@@ -524,7 +527,7 @@
                  (when (:name this) (pom/name (:name this)))
                  (when (:url this) (pom/url (:url this)))
                  (when (:distribution this) (pom/distribution (:distribution this)))
-                 (when (:url this) (pom/url (:url this))))))
+                 (when (:comments this) (pom/comments (:comments this))))))
 
 (defrecord Scm
   [connection developer-connection tag url]
@@ -656,16 +659,18 @@
 ;
 ; pom parsing
 ;
-(defn parse-pom-exclusion [prop-map exclusion]
+(defn parse-pom-exclusion
   "Returns the exclusion data of a POM dependency."
+  [prop-map exclusion]
   (let [e ((juxt
              #(pr/replace-properties prop-map (zx/xml1-> % :groupId zx/text))
              #(pr/replace-properties prop-map (zx/xml1-> % :artifactId zx/text)))
            exclusion)]
     (apply new-pom-exclusion e)))
 
-(defn parse-pom-dependency [prop-map dep]
+(defn parse-pom-dependency
   "Returns the dependency data of a POM dependency."
+  [prop-map dep]
   (let [group-id (pr/replace-properties prop-map (zx/xml1-> dep :groupId zx/text))
         artifact-id (pr/replace-properties prop-map (zx/xml1-> dep :artifactId zx/text))
         version (pr/replace-properties prop-map (zx/xml1-> dep :version zx/text))
@@ -678,8 +683,9 @@
 
     (new-pom-dependency group-id artifact-id version type classifier scope system-path exclusions optional)))
 
-(defn parse-pom-parent [prop-map zipped]
+(defn parse-pom-parent
   "Returns the parent POM artifact data if it exists."
+  [prop-map zipped]
   (if-let [parent (zx/xml1-> zipped :parent)]
     (let [p ((juxt
               #(pr/replace-properties prop-map (zx/xml1-> % :groupId zx/text))
@@ -727,10 +733,12 @@
               dependencies dependencyManagement p-map parent-pom))))
 
 ;TODO use prop-map from parent pom
-(defn pom-parent? [zipped]
+(defn pom-parent?
+  [zipped]
   (not (nil? (zx/xml1-> zipped :parent))))
 
-(defn pom-parent-data [prop-map zipped]
+(defn pom-parent-data
+  [prop-map zipped]
   (parse-pom-parent (parse-pom-properties prop-map zipped) zipped))
 
 (defn pom-dependencies-data

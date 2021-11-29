@@ -2,9 +2,12 @@ xml.maven
 ===========
 The xml.maven library contains code to process Maven POMs and metadata.
 
+Usage
+-----
+
 Copyright
 ---------
-© 2012-2020 Ludger Solbach
+© 2012-2021 Ludger Solbach
 
 License
 -------

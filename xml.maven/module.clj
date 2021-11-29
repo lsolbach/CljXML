@@ -2,7 +2,7 @@
  :module "xml.maven"
  :project "org.soulspace.clj"
  :type :library
- :version "0.6.0"
+ :version "0.6.1"
  :description "The xml.maven library contains code to process Maven POMs and metadata."
  :license ["Eclipse Public License 1.0" "http://www.eclipse.org/legal/epl-v10.html"]
  :scm-url "https://github.com/lsolbach/CljDevTools"

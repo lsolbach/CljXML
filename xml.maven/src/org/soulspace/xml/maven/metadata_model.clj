@@ -22,16 +22,16 @@
   (metadata-xml [this] "Build XML for metadata."))
 
 (defprotocol MetadataVersioning
-  (versioning-xml [this] "Build XML for metadata."))
+  (versioning-xml [this] "Build XML for metadata versioning."))
 
 (defprotocol MetadataSnapshot
-  (snapshot-xml [this] "Build XML for metadata."))
+  (snapshot-xml [this] "Build XML for metadata snapshot."))
 
 (defprotocol MetadataSnapshotVersion
-  (snapshot-version-xml [this] "Build XML for metadata."))
+  (snapshot-version-xml [this] "Build XML for metadata snapshot version."))
 
 (defprotocol MetadataPlugin
-    (plugin-xml [this] "Build XML for metadata."))
+    (plugin-xml [this] "Build XML for metadata plugin."))
 
 (defrecord MetadataImpl
   [group-id artifact-id version versioning plugins]

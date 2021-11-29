@@ -1,4 +1,4 @@
-(defproject org.soulspace.clj/xml.maven "0.5.3"
+(defproject org.soulspace.clj/xml.maven "0.6.1"
   :description "The xml.maven library contains code to process Maven POMs and metadata."
   :url "https://github.com/lsolbach/CljDevTools"
   :license {:name "Eclipse Public License"
