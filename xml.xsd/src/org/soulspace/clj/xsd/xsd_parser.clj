@@ -2,6 +2,8 @@
   (:require ;[clojure.string :as str]
    [clojure.data.xml :as xml]))
 
+
+
 (declare parse-element parse-group parse-sequence parse-simple-type)
 
 (defn get-content
@@ -524,7 +526,9 @@
   "Parses an XML schema import."
   [element]
   (let [{tag :tag attrs :attrs content :content} element]
-    (merge attrs {:_tag tag :_content (into [] (map parse-import-content) content)})))
+    (merge attrs
+           {:_tag tag
+            :_content (into [] (map parse-import-content) content)})))
 
 (defn parse-schema-content
   "Parses an XML schema document content."
@@ -552,8 +556,11 @@
 
 (defn parse-schema
   "Parses an XML schema document."
-  [{tag :tag attrs :attrs content :content}]
-  (into [] (map parse-schema-content) content))
+  [element]
+  (let [{tag :tag attrs :attrs content :content} element]
+    (merge attrs
+           {:_tag tag
+            :_content (into [] (map parse-schema-content) content)})))
 
 (defn parse-xsd
   "Loads and parses a XML Schema."
@@ -563,9 +570,18 @@
        (xml/parse-str)
        (parse-schema)))
 
+(defn elements
+  ""
+  [xsd]
+  (filter #(= (:_tag %) :element) xsd))
+
 (comment
   (parse-xsd "resources/XMLSchema_1.1.xsd")
   (parse-xsd "resources/datatypes_1.1.xsd")
   (parse-xsd "resources/XMLSchema.xsd")
   (parse-xsd "resources/maven-4.0.0.xsd")
+  (->> (parse-xsd "resources/datatypes_1.1.xsd")
+       (:_content)
+       (elements)
+       (map #(select-keys % [:name :type :id])))
   )
