@@ -1,6 +1,10 @@
 Change Log
 ==========
 
+Version 0.6.1
+-------------
+* added settings dsl
+
 Version 0.6.0
 -------------
 * Renamed project to tools.maven
