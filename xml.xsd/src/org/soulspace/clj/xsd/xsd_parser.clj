@@ -3,12 +3,17 @@
    [clojure.data.xml :as xml]))
 
 
-; build in schema types:
+; 3.16.7.4 Built-in primitive datatypes
 ; string, boolean, float, double, decimal, dateTime, duration, time,
 ; date, gMonth, gMonthDay, gDay, gYear, gYearMonth, hexBinary, base64Binary,
 ; anyURI, QName and NOTATION
 
 (declare parse-element parse-group parse-sequence parse-simple-type)
+
+(def buildin-types #{"xs:string" "xs:boolean" "xs:float" "xs:double" "xs:decimal"
+                     "xs:dateTime" "xs:duration" "xs:time" "xs:date"
+                     "xs:gMonth" "xs:gMonthDay" "xs:gDay" "xs:gYear" "xs:gYearMonth"
+                     "xs:hexBinary" "xs:base64Binary" "xs:anyURI" "xs:QName" "xs:NOTATION"})
 
 (defn get-content
   "Returns the content, when tag of the entry maches the given tag."
@@ -600,29 +605,47 @@
   (= (:_tag e) :complexType))
 
 (defn simple-element?
-  ""
+  "Tests if the entry is an element of type simple."
   [e]
-  ; TODO
-  )
+  ; TODO check correct condition
+  (and (element? e) (or (contains? buildin-types (:type e))
+                        (seq (filter simple-type? (:_content e))))))
 
 (defn complex-element?
-  ""
+  "Tests if the entry is an element of type complex."
   [e]
-  ; TODO
-  )
+  ; TODO check correct condition
+  (and (element? e) (or (not (contains? buildin-types (:type e)))
+                        (seq (filter complex-type? (:_content e))))))
+
+(defn element-ref?
+  "Tests if the entry is an element reference."
+  [e]
+  ; TODO check correct condition
+  (and (element? e) (:ref e)))
+
+(defn ref?
+  "Tests if the entry is a reference."
+  [e]
+  (:ref e))
+
+(defn identifiable?
+  "Tests if the entry is identifiable."
+  [e]
+  (:id e))
 
 (defn optional?
-  ""
+  "Tests if the entry is optional."
   [e]
   (= (:minOccurs e) "0"))
 
 (defn mandatory?
-  ""
+  "Tests if the entry is  mandatory."
   [e]
   (not= (:minOccurs e) "0"))
 
 (defn unbounded?
-  ""
+  "Tests if the cardinality of the entry is unbounded."
   [e]
   (= (:maxOccurs e) "unbounded"))
 
@@ -638,10 +661,12 @@
   (parse-xsd "resources/XMLSchema.xsd")
   (parse-xsd "resources/maven-4.0.0.xsd")
   (print-list (->>
-;               (parse-xsd "resources/XMLSchema_1.1.xsd")
+               (parse-xsd "resources/XMLSchema_1.1.xsd")
 ;               (parse-xsd "resources/datatypes_1.1.xsd")
-               (parse-xsd "resources/maven-4.0.0.xsd")
+;               (parse-xsd "resources/maven-4.0.0.xsd")
                (:_content)
-               (filter element?)
+;               (filter element?)
+;               (filter optional?)
+               (filter identifiable?)
                (map #(dissoc % :_content))))
   )
