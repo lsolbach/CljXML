@@ -3,6 +3,10 @@
    [clojure.data.xml :as xml]))
 
 
+; build in schema types:
+; string, boolean, float, double, decimal, dateTime, duration, time,
+; date, gMonth, gMonthDay, gDay, gYear, gYearMonth, hexBinary, base64Binary,
+; anyURI, QName and NOTATION
 
 (declare parse-element parse-group parse-sequence parse-simple-type)
 
@@ -570,18 +574,74 @@
        (xml/parse-str)
        (parse-schema)))
 
-(defn elements
+(defn attribute?
+  "Tests if the entry is an attribute."
+  [e]
+  (= (:_tag e) :attribute))
+
+(defn element?
+  "Tests if the entry is an element."
+  [e]
+  (= (:_tag e) :element))
+
+(defn group?
+  "Tests if the entry is a group."
+  [e]
+  (= (:_tag e) :group))
+
+(defn simple-type?
+  "Tests if the entry is a simple type."
+  [e]
+  (= (:_tag e) :simpleType))
+
+(defn complex-type?
+  "Tests if the entry is a complex type."
+  [e]
+  (= (:_tag e) :complexType))
+
+(defn simple-element?
   ""
-  [xsd]
-  (filter #(= (:_tag %) :element) xsd))
+  [e]
+  ; TODO
+  )
+
+(defn complex-element?
+  ""
+  [e]
+  ; TODO
+  )
+
+(defn optional?
+  ""
+  [e]
+  (= (:minOccurs e) "0"))
+
+(defn mandatory?
+  ""
+  [e]
+  (not= (:minOccurs e) "0"))
+
+(defn unbounded?
+  ""
+  [e]
+  (= (:maxOccurs e) "unbounded"))
+
+(defn print-list
+  ""
+  [coll]
+  (doseq [e coll]
+    (println e)))
 
 (comment
   (parse-xsd "resources/XMLSchema_1.1.xsd")
   (parse-xsd "resources/datatypes_1.1.xsd")
   (parse-xsd "resources/XMLSchema.xsd")
   (parse-xsd "resources/maven-4.0.0.xsd")
-  (->> (parse-xsd "resources/datatypes_1.1.xsd")
-       (:_content)
-       (elements)
-       (map #(select-keys % [:name :type :id])))
+  (print-list (->>
+;               (parse-xsd "resources/XMLSchema_1.1.xsd")
+;               (parse-xsd "resources/datatypes_1.1.xsd")
+               (parse-xsd "resources/maven-4.0.0.xsd")
+               (:_content)
+               (filter element?)
+               (map #(dissoc % :_content))))
   )
