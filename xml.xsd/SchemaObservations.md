@@ -45,7 +45,12 @@ Simple Types
 ------------
 Simple types as datatypes are about definitions and constraints on the leaf nodes and attributes.
 Simple types can be named or anonymous.
+Whitespace replacement is done for all string datatypes except for xs:string
+Whitespace collapse is done for all string datatypes exept for xs:string and xs:normalizedString
+Whitespace collapesed string datatypes are xs:ENTITY, xs:ID, xs:IDREF, xs:language, xs:Name, xs:NCName, xs: NMTOKEN, xs:token, xs:anyURI, xs:base64Binary, xs:hexBinary, xs:NOTATION and xs:QName.
 Simple types support derivation by restriction, by list and by union.
+Derivation by restriction is done by adding facets to the restriction element or in two steps with a simple type element embedded in a restiction with further restrictions inside the simple type.
+
 
 Complex Types
 -------------
