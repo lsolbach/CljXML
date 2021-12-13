@@ -1,6 +1,8 @@
 (ns org.soulspace.clj.xsd.xsd-parser
-  (:require ;[clojure.string :as str]
-   [clojure.data.xml :as xml]))
+  (:require [clojure.string :as str]
+            [clojure.pprint :as pp]
+            [clojure.data.xml :as xml]
+            [clojure.walk :as walk]))
 
 
 ; 3.16.7.4 Built-in primitive datatypes
@@ -15,6 +17,7 @@
                      "xs:gMonth" "xs:gMonthDay" "xs:gDay" "xs:gYear" "xs:gYearMonth"
                      "xs:hexBinary" "xs:base64Binary" "xs:anyURI" "xs:QName" "xs:NOTATION"})
 
+; TODO not needed here
 (defn get-content
   "Returns the content, when tag of the entry maches the given tag."
   [tag entry]
@@ -584,6 +587,11 @@
   [e]
   (= (:_tag e) :attribute))
 
+(defn attribute-group?
+  "Tests if the entry is a attribute group."
+  [e]
+  (= (:_tag e) :attributeGroup))
+
 (defn element?
   "Tests if the entry is an element."
   [e]
@@ -625,12 +633,22 @@
   (and (element? e) (:ref e)))
 
 (defn ref?
-  "Tests if the entry is a reference."
+  "Tests if the entry has a ref attribure."
   [e]
   (:ref e))
 
-(defn identifiable?
-  "Tests if the entry is identifiable."
+(defn named?
+  "Tests if the entry has a name attribute."
+  [e]
+  (:name e))
+
+(defn typed?
+  "Tests if the entry has a type attribute."
+  [e]
+  (:type e))
+
+(defn identified?
+  "Tests if the entry has an id attribute."
   [e]
   (:id e))
 
@@ -649,13 +667,105 @@
   [e]
   (= (:maxOccurs e) "unbounded"))
 
-(defn print-list
+(defn print-element [e] (println (dissoc e :_content)))
+
+
+(defn global-definition-map
   ""
+  [e]
+  (print-element e)
+  (->> (:_content e)
+       (filter named?)
+       (into {} (map (fn [x] [(:name x) x])))))
+
+(defn global-element-map
+  ""
+  [e]
+  (->> (:_content e)
+       (filter (comp named? element?))
+       (into {} (map (fn [x] [(:name x) x])))))
+
+(defn global-attribute-map
+  ""
+  [e]
+  (->> (:_content e)
+       (filter (comp named? attribute?))
+       (into {} (map (fn [x] [(:name x) x])))))
+
+(defn global-group-map
+  ""
+  [e]
+  (->> (:_content e)
+       (filter (comp named? group?))
+       (into {} (map (fn [x] [(:name x) x])))))
+
+(defn global-attribute-group-map
+  ""
+  [e]
+  (->> (:_content e)
+       (filter (comp named? attribute-group?))
+       (into {} (map (fn [x] [(:name x) x])))))
+
+(defn global-complex-type-map
+  ""
+  [e]
+  (->> (:_content e)
+       (filter (comp named? complex-type?))
+       (into {} (map (fn [x] [(:name x) x])))))
+
+(defn global-simple-type-map
+  ""
+  [e]
+  (->> (:_content e)
+       (filter (comp named? simple-type?))
+       (into {} (map (fn [x] [(:name x) x])))))
+
+
+(defn add-named-element
+  [name-map element]
+  (if (and (named? element) (not (attribute? element)))
+    (assoc name-map (:name element) element)
+    name-map))
+
+(defn named-element-map
+  ""
+  ([element]
+   (named-element-map {} element))
+  ([name-map element]
+   (let [new-map (add-named-element name-map element)
+         content (:_content element)]
+     (when (not (string? content))
+       (loop [c content m new-map]
+         (if (seq c)
+           (recur (rest c) (merge m (named-element-map (first c))))
+           m))))))
+
+(comment  
+  (->>
+   (parse-xsd "resources/XMLSchema_1.1.xsd")
+   (global-definition-map))
+  (pp/pprint (->>
+   (parse-xsd "resources/XMLSchema_1.1.xsd")
+   (named-element-map)))
+)
+
+(defn print-list
+  "Prints a list of elements (without the content of the elements)"
   [coll]
   (doseq [e coll]
-    (println e)))
+    (println (dissoc e :_content))))
+
+(defn print-tree
+  "Prints a tree of the elements."
+  [indent e]
+  (println (str/join (repeat indent "|")) (dissoc e :_content))
+  (let [c (:_content e)]
+    (when (and (seq c) (not (string? c)))
+      (doseq [x c]
+        (print-tree (inc indent) x)))))
 
 (comment
+  (str/join (repeat 5 " "))
   (parse-xsd "resources/XMLSchema_1.1.xsd")
   (parse-xsd "resources/datatypes_1.1.xsd")
   (parse-xsd "resources/XMLSchema.xsd")
@@ -665,8 +775,14 @@
 ;               (parse-xsd "resources/datatypes_1.1.xsd")
 ;               (parse-xsd "resources/maven-4.0.0.xsd")
                (:_content)
-;               (filter element?)
+               (filter identified?)
 ;               (filter optional?)
-               (filter identifiable?)
-               (map #(dissoc % :_content))))
+;               (filter identifiable?)
+               ))
+  (->>
+   (parse-xsd "resources/XMLSchema_1.1.xsd")
+   (print-tree 0))
+  (->>
+   (parse-xsd "resources/XMLSchema_1.1.xsd")
+   (global-definition-map))
   )
